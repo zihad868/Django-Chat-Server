@@ -176,7 +176,7 @@ SWAGGER_SETTINGS = {
 from datetime import timedelta
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),  # Access token expiration time
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=40),  # Access token expiration time
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),    # Refresh token expiration time
     'ROTATE_REFRESH_TOKENS': True,                  # Set to True to rotate refresh tokens
     'BLACKLIST_AFTER_ROTATION': True,              # Blacklist old refresh tokens after rotation
@@ -228,15 +228,6 @@ CORS_ALLOW_METHODS = [
 
 
 
-# 
-
-ASGI_APPLICATION = "messaging_api.asgi.application"
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer",
-    },
-}
-
 
 # Media File
 MEDIA_URL = '/media/'
@@ -249,3 +240,10 @@ CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 
 
+
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',  # Suitable for development
+    },
+}
