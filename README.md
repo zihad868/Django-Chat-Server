@@ -61,9 +61,9 @@
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
     -  Body: `{"receiver_user": "Receiver user id", "message": "string"}`
 
- - **GET** `/api/projects/{priject id}/`
+ - **POST** `/api/groups/create/`
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    - Response: `Specific Project Details`
+    - Body: `{"name": "String", "members": "[id, ..]"}`
 
   - **PATCH** `/api/projects/{priject id}/`
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
