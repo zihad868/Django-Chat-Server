@@ -42,7 +42,7 @@
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
     -  Response: `User deleted successfully.`
 
-    - **GWT** `/api/users/protected/`
+   - **GET** `/api/users/protected/`
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
     - Response: `Response Your Email`
  
