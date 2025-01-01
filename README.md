@@ -52,6 +52,7 @@
     -  Response: `User Logout successfully.`
 
 
+
 ### Chat + Join Group
 - **GET** `/api/messages/{conversation_id}/`
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
@@ -65,15 +66,16 @@
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
     - Body: `{"name": "String", "members": "[id, ..]"}`
 
-  - **PATCH** `/api/projects/{priject id}/`
+
+  - **POST** `/api/groups/{group_id}/join/`
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    -  Body: `{"description": "string"}`
+      
+
    
- - **PUT** `/api/projects/{priject id}/`
+ - **POST** `/api/groups/{group_id}/leave/`
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    -  Body: `{"name": "string", "description": "string"}`
+
   
-  - **DELETE** `/api/projects/{priject id}/`
+  - **GET** `/api/messages/files/{file_id}/`
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    -  Response: `Project deleted successfully.`
 
