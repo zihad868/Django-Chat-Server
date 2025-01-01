@@ -25,7 +25,7 @@
  
     
 
- - **GET** `/api/users/{user_id}`
+ - **GET** `/api/{user_id}`
    - Response: `Get User Details`
 
 
