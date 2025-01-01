@@ -1,31 +1,4 @@
-## Django  Project Management API
-
-#  Swaggwer API Documentation 
--  http://127.0.0.1:8000/api-listing/
--  http://127.0.0.1:8000/api-documentation/
-
-  
-  ## Features
-- User Management: Register, log in, retrieve, update, and delete user accounts.
-- Project Management: Create, list, update, and delete projects with owner and member roles.
-- Task Management: CRUD operations on tasks within projects with priority and status tracking.
-- Comment Management: Commenting on tasks with retrieval, updates, and deletions.
-  
-
-## Clone and Run Local Manually 
--  pip install virtualenv 
--  virtualenv env                    --->  ( For Linux )
--  source ./env/bin/activate   --->  ( For Linux )
--  pip install django
--  pip install djangorestframework
--  pip install djangorestframework-simplejwt
--  pip install drf-yasg
--  git clone https://github.com/zihad868/ProjectManagementServer.git
--  cd ProjectManagementServer
--  python manage.py makemigrations
--  python manage.py migrate
--  python manage.py createsuperuser
--  python manage.py runserver
+## Django  Real Time Chat API
 
 ## OR Git Clone & go to main project directory run
  -  git clone https://github.com/zihad868/ProjectManagementServer.git
@@ -41,12 +14,12 @@
 
 ### Authentication
 
-- **POST** `/api/users/register/`
+- **POST** `/api/register/`
   - Body: `{"username": "string", "email": "your email" "password": "string", "first_name": "string", "last_name": "string"}`
  
     
 
-- **POST** `/api/users/login/`
+- **POST** `/api/login/`
   - Get Refresh & Access Token
   - Body: `{"email": "string", "password": "string"}`
  
@@ -56,16 +29,16 @@
    - Response: `Get User Details`
 
 
-- **PATCH** `/api/users/{user id}/update/`
+- **PATCH** `/api/{user id}/update/`
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
     - Body: `{"email": "string"}`
 
 
-- **PUT** `/api/users/{user id}/update/`
+- **PUT** `/api/{user id}/update/`
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
     - Body: `{"username": "string", "email": "your email" "password": "string", "first_name": "string", "last_name": "string"}`
 
-- **DELETE** `/api/users/{user id}/delete/`
+- **DELETE** `/api/{user id}/delete/`
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
     -  Response: `User deleted successfully.`
 
