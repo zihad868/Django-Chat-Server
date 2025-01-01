@@ -52,14 +52,14 @@
     -  Response: `User Logout successfully.`
 
 
-### Projects
-- **GET** `/api/projects/`
+### Chat + Join Group
+- **GET** `/api/messages/{conversation_id}/`
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    - Response: `Project Details`
+    - Response: `Message Details`
 
- - **POST** `/api/projects/`
+ - **POST** `/api/messages/{{conversation_id}}/send/`
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    -  Body: `{"name": "string", "description": "string"}`
+    -  Body: `{"receiver_user": "Receiver user id", "message": "string"}`
 
  - **GET** `/api/projects/{priject id}/`
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
@@ -77,62 +77,3 @@
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
     -  Response: `Project deleted successfully.`
 
-
-### Task
-- **GET** `/api/projects/{project_id}/tasks/`
-    - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    - Response: `Project Details`
-
-
-
- - **POST** `/api/projects/{project id}/tasks/`
-    - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    -  Body: `{"title": "string", "description": "string"}`
-
- 
- - **GET** `/api/tasks/{task id}/`
-    - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    - Response: `Specific task details` 
-
-
- - **PATCH** `/api/tasks/{task id}/`
-    - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    -  Body: `{"title": "string"}`
-  
-   
- - **PUT** `/api/tasks/{task id}/`
-    - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    -  Body: `{"title": "string", "description": "string"}`
-  
-  - **DELETE**  /api/tasks/{task id}/`
-    - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    -  Response: `Task deleted successfully.`
-
-
-
-  ### Comments
-- **GET** `/api/tasks/{task id}/comments/`
-    - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    - Response: `Get comments specific task`
-
-
- - **POST** `/api/tasks/{task id}/comments/`
-    - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    -  Body: `{"content": "string"}`
-
-- **GET** `/api/comments/{comment id}/`
-    - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    - Response: `Specific comment details`
-
- - **PATCH** `/api/comments/{comment id}/`
-    - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    -  Body: `{"content": "string"}`
-   
- - **PUT** `/api/comments/{comment id}/`
-    - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    -  Body: `{"content": "string"}`
-
-      
-  - **DELETE**  `/api/comments/{comment id}/`
-    - Header: `{Authorization:  Bearer  {Your Login Token}}`
-    -  Response: `Task deleted successfully.`
