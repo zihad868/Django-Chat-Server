@@ -46,7 +46,7 @@
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
     - Response: `Response Your Email`
  
-  - **LOGOUT** `/api/logout/`
+- **LOGOUT** `/api/logout/`
     - Header: `{Authorization:  Bearer  {Your Login Token}}`
     -  Body: `{"refresh": "Your Refresh Token"}`
     -  Response: `User Logout successfully.`
