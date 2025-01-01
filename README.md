@@ -1,7 +1,7 @@
 ## Django  Real Time Chat API
 
 ## OR Git Clone & go to main project directory run
- -  git clone https://github.com/zihad868/ProjectManagementServer.git
+ -  git clone https://github.com/zihad868/Django-Chat-Server
  -  pip install -r requirements.txt
  -  cd ChatServer
  -  python manage.py makemigrations
