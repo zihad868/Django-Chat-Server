@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     
     # Custom App
     "authentication",
+    "chat"
 ]
 
 MIDDLEWARE = [
@@ -224,3 +225,27 @@ CORS_ALLOW_METHODS = [
     'OPTIONS',
     'PATCH',
 ]
+
+
+
+# 
+
+ASGI_APPLICATION = "messaging_api.asgi.application"
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
+    },
+}
+
+
+# Media File
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+
+# CELERY
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+
