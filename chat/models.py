@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.utils.timezone import now, timedelta
 
 
 class Group(models.Model):
@@ -9,6 +10,9 @@ class Group(models.Model):
     def __str__(self):
         return self.name
 
+
+def default_file_expiry():
+    return now() + timedelta(days=10)
 
 class Message(models.Model):
     sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='sent_messages')
@@ -21,10 +25,7 @@ class Message(models.Model):
     message = models.TextField(blank=True, null=True)
     file = models.FileField(upload_to='uploads/', blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
-    file_expiry = models.DateTimeField(null=True, blank=True)
-
-    def __str__(self):
-        return f'Message from {self.sender}'
+    file_expiry = models.DateTimeField(default=default_file_expiry)
 
     class Meta:
-        ordering = ['-timestamp']  # Latest messages first
+        ordering = ['-timestamp']
